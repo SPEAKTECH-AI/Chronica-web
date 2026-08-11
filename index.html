@@ -1,111 +1,791 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Chronica - Your Life, Visualized </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css" />
-</head>
+    <title>Chronica — Your Life, Visualized.</title>
 
-<body>
-  <section class="hero">
-    <div class="container">
-      <div class="logo">
-      <img src="images/logo.png" alt="Chronica logo">
-      <span>Chronica</span>
-   </div>
+    <meta
+        name="description"
+        content="Chronica is a Life Operating System that helps you document, reflect on, and remember your life — one day at a time."
+    >
 
-      <h2 class="headline">
-        Your life, visualized one day at a time.
-      </h2>
+    <link rel="stylesheet" href="style.css">
+ </head>
 
-      <p class="subtext">
-        Chronica turns your life into a visual map of days — helping you document your intentions, reflections, achievements, and the moments that shaped you.
-      </p>
+ <body>
 
-      <form 
-      class="waitlist-form"
-      action="https://formspree.io/f/mykowwqp"
-      method="POST"
-      id="waitlistForm"
-      >
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
-      <input 
-        type="email" 
-        name="email"
-        placeholder="Enter your email" required />
-      
-        <button type="submit">Join Early Access</button>
+    <header class="site-header">
 
-        <input type="hidden" name="_subject" value="New Chronica Waitlist Signup" />
-      </form>
+        <div class="nav-container">
 
-       <p class="succes-message" id="successMessage" hidden>
-        You're on the list. Your life map begins soon.
-      </p>
+            <a href="#" class="brand">
+                <img src="images/logo.png" alt="Chronica">
+                <span>Chronica</span>
+            </a>
 
-      <p class="note" id="noteText">
-        Be among the first to experience Chronica.
-      </p>
+            <nav class="nav-links">
+                <a href="#how-it-works">How it works</a>
+                <a href="#features">Features</a>
+                <a href="#early-access" class="nav-cta">
+                    Early Access
+                </a>
+            </nav>
 
-      <div class="life-map-preview">
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span class="documented"></span><span></span><span></span><span></span>
-        <span></span><span></span><span class="crowned">👑</span><span></span><span></span>
-        <span></span><span></span><span></span><span class="future"></span><span class="future"></span>
-    </div>
+        </div>
 
-    <p class="micro-note">
-        Launching soon. Early access limited.
-    </p>
+    </header>
 
-     </div>
-  </section>
 
-  <section class="days-section">
-  <div class="container">
+    <main>
 
-    <h2 class="days-number">29,220 days.</h2>
+        <!-- =========================
+             HERO
+        ========================== -->
 
-    <p class="days-text">
-      That’s the average human life.
-    </p>
+        <section class="hero">
 
-    <p class="days-text">
-      Most days pass undocumented.
-    </p>
+            <div class="hero-container">
 
-    <p class="days-text highlight">
-      Chronica helps you make them count.
-    </p>
+                <div class="eyebrow">
+                    <span class="eyebrow-dot"></span>
+                    A LIFE OPERATING SYSTEM
+                </div>
 
-  </div>
- </section>
+                <h1>
+                    Your life,<br>
+                    <span>visualized.</span>
+                </h1>
 
- <section class="features-section">
-  <div class="container">
-    <h2 class="features-title">What Chronica helps you do</h2>
+                <p class="hero-description">
+                    Chronica turns your life into a visual map of days —
+                    helping you document what mattered, reflect on your journey,
+                    and remember the moments that shaped you.
+                </p>
 
-    <div class="features-list">
-      <p class="feature-item">Visualize your life as a calm Life Map</p>
-      <p class="feature-item">Capture your daily intention, reflection, and achievement</p>
-      <p class="feature-item">See your documented days and crowned days</p>
-      <p class="feature-item">Build a personal archive of your life</p>
-      <p class="feature-item">Reflect weekly on your growth</p>
-      <p class="feature-item">Share meaningful life snapshots</p>
-    </div>
-  </div>
-</section>
+                <form
+                    class="waitlist-form"
+                    action="https://formspree.io/f/mykowqwp"
+                    method="POST"
+                    id="waitlistForm"
+                >
 
-<footer class="footer">
-  <h3>Every day counts.</h3>
-  <span>© Chronica LifeOS</span>
-</footer>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        aria-label="Email address"
+                        required
+                    >
 
- 
+                    <input
+                        type="hidden"
+                        name="_subject"
+                        value="New Chronica Waitlist Signup"
+                    >
 
- <script src="script.js"></script>
- </body>
+                    <button type="submit">
+                        Join Early Access
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+                <p class="form-note">
+                    Join the first people experiencing Chronica.
+                </p>
+
+                <p
+                    class="success-message"
+                    id="successMessage"
+                    hidden
+                >
+                    You're on the list. Your life begins soon.
+                </p>
+
+
+                <!-- LIFE MAP PREVIEW -->
+
+                <div class="life-map-wrapper">
+
+                    <div class="life-map">
+
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="documented"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="crowned"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="memory"></span>
+
+                    </div>
+
+                </div>
+
+                <p class="launch-note">
+                    Launching soon · Early access is limited.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             29,220 DAYS
+        ========================== -->
+
+        <section class="days-section">
+
+            <div class="section-container">
+
+                <p class="section-label">
+                    A LIFE IN NUMBERS
+                </p>
+
+                <h2>
+                    29,220
+                    <span>days.</span>
+                </h2>
+
+                <p class="days-lead">
+                    That's roughly the number of days in an 80-year life.
+                </p>
+
+                <p class="days-copy">
+                    Most of them pass quietly.
+                    Unrecorded. Unremembered.
+                </p>
+
+                <p class="days-highlight">
+                    Chronica helps you make them count.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             HOW IT WORKS
+        ========================== -->
+
+        <section
+            class="how-section"
+            id="how-it-works"
+        >
+
+            <div class="section-container">
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        HOW IT WORKS
+                    </p>
+
+                    <h2>
+                        A life worth<br>
+                        <span>remembering.</span>
+                    </h2>
+
+                    <p>
+                        Chronica gives you a simple way to document
+                        the days that become your life.
+                    </p>
+
+                </div>
+
+
+                <div class="process-grid">
+
+                    <article class="process-card">
+
+                        <span class="card-number">01</span>
+
+                        <h3>
+                            See your life.
+                        </h3>
+
+                        <p>
+                          Visualize your lifetime as a calm,
+                            living map of days.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card featured-card">
+
+                        <span class="card-number">02</span>
+
+                        <h3>
+                            Document today.
+                        </h3>
+
+                        <p>
+                            Capture your intention, reflection,
+                            and achievement.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card">
+
+                        <span class="card-number">03</span>
+
+                        <h3>
+                            Remember what mattered.
+                        </h3>
+
+                        <p>
+                            Build a personal archive of the
+                            moments and thoughts that shaped you.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card">
+
+                        <span class="card-number">04</span>
+
+                        <h3>
+                            Reflect on your journey.
+                        </h3>
+
+                        <p>
+                            Look back, notice patterns,
+                            and understand how your life unfolds.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FEATURES
+        ========================== -->
+
+        <section
+            class="features-section"
+            id="features"
+        >
+
+            <div class="section-container">
+
+                <div class="section-heading centered">
+
+                    <p class="section-label">
+                        THE CHRONICA EXPERIENCE
+                    </p>
+
+                    <h2>
+                        Your life.
+                        <span>All in one place.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="features-list">
+
+                    <div class="feature-row">
+
+                        <span class="feature-index">01</span>
+
+                        <div>
+                            <h3>
+                                Life Map
+                            </h3>
+
+                            <p>
+                                See your entire life as a visual
+                                map of days.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature-row">
+
+                        <span class="feature-index">02</span>
+
+                        <div>
+                            <h3>
+                                Daily Documentation
+                            </h3>
+
+                            <p>
+                                Capture what you intended,
+                                what happened, and what mattered.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature-row">
+
+                        <span class="feature-index">03</span>
+
+                        <div>
+                            <h3>
+                                Life Archive
+                            </h3>
+
+                            <p>
+                                Build a permanent personal record
+                                of your journey.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature-row">
+
+                        <span class="feature-index">04</span>
+
+                        <div>
+                            <h3>
+                                Weekly Reflection
+                            </h3>
+
+                            <p>
+                                Step back from the noise and
+                                understand your progress.
+                                </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature-row">
+
+                        <span class="feature-index">05</span>
+
+                        <div>
+                            <h3>
+                                Meaningful Snapshots
+                            </h3>
+
+                            <p>
+                                Turn your journey into moments
+                                worth keeping and sharing.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EARLY ACCESS
+        ========================== -->
+
+        <section
+            class="early-access"
+            id="early-access"
+        >
+
+            <div class="early-access-inner">
+
+                <p class="section-label">
+                    EARLY ACCESS
+                </p>
+
+                <h2>
+                    Your days are passing.
+                </h2>
+
+                <p>
+                    Start remembering them.
+                </p>
+
+                <form
+                    class="waitlist-form final-form"
+                    action="https://formspree.io/f/mykowqwp"
+                    method="POST"
+                >
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        aria-label="Email address"
+                        required
+                    >
+
+                    <input
+                        type="hidden"
+                        name="_subject"
+                        value="New Chronica Waitlist Signup"
+                    >
+
+                    <button type="submit">
+                        Join Early Access
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+                <p class="form-note">
+                    Launching soon · Early access is limited.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="#" class="brand">
+
+                    <img
+                        src="images/logo.png"
+                        alt="Chronica"
+                    >
+
+                    <span>Chronica</span>
+
+                </a>
+
+                <p>
+                    A Life Operating System.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#how-it-works">
+                    How it works
+                </a>
+
+                <a href="#features">
+                    Features
+                </a>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+                <a href="mailto:hello@chronica.so">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Chronica LifeOS
+            </span>
+
+            <span>
+                Every day counts.
+            </span>
+
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
 </html>
