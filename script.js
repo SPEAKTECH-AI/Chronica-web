@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
 
             const button = form.querySelector('button[type="submit"]');
+            const input = form.querySelector('input[type="email"]');
 
             const originalButtonText = button.innerHTML;
 
@@ -22,7 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 const response = await fetch("/", {
                     method: "POST",
                     headers: {
-                        "Content-Type": "application/x-www-form-urlencoded"
+                        "Content-Type":
+                            "application/x-www-form-urlencoded"
                     },
                     body: new URLSearchParams(formData).toString()
                 });
@@ -31,13 +33,27 @@ document.addEventListener("DOMContentLoaded", () => {
                     throw new Error("Form submission failed.");
                 }
 
+                /* Clear the email field */
                 form.reset();
 
-                form.style.display = "none";
+                /* Restore the button */
+                button.disabled = false;
+                button.innerHTML = originalButtonText;
 
-                const successMessage = document.createElement("p");
+                /* Remove any previous success message */
+                const oldMessage =
+                    form.parentNode.querySelector(".success-message");
 
-                successMessage.className = "success-message";
+                if (oldMessage) {
+                    oldMessage.remove();
+                }
+
+                /* Create success message */
+                const successMessage =
+                    document.createElement("p");
+
+                successMessage.className =
+                    "success-message";
 
                 successMessage.textContent =
                     "You're in. We'll let you know when Chronica opens.";
@@ -47,6 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     form.nextSibling
                 );
 
+                /* Put the cursor back in the email field */
+                if (input) {
+                    input.focus();
+                }
+
             } catch (error) {
 
                 console.error(
@@ -55,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
                 button.disabled = false;
-
                 button.innerHTML = originalButtonText;
 
                 alert(
