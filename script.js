@@ -1,66 +1,91 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("waitlistForm");
-  const successMessage = document.getElementById("successMessage");
-  const noteText = document.getElementById("noteText");
+    const forms = document.querySelectorAll(".waitlist-form");
 
-  if (!form || !successMessage) return;
+    forms.forEach((form) => {
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+            const button = form.querySelector('button[type="submit"]');
+            const originalButtonText = button ? button.innerHTML : "";
 
-    const data = new FormData(form);
+            if (button) {
+                button.disabled = true;
+                button.innerHTML = "Joining...";
+            }
 
-    try {
-      const response = await fetch(form.action, {
-        method: "POST",
-        body: data,
-        headers: {
-          Accept: "application/json",
-        },
-      });
+            const data = new URLSearchParams(new FormData(form));
 
-      if (response.ok) {
-  form.reset();
+            try {
+                const response = await fetch("/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type":
+                            "application/x-www-form-urlencoded",
+                    },
+                    body: data.toString(),
+                });
 
-  // Hide form completely
-  form.style.display = "none";
+                if (response.ok) {
+                    form.reset();
+                    form.style.display = "none";
 
-  // Show success message
-  successMessage.hidden = false;
-  successMessage.classList.add("show");
+                    const successMessage =
+                        document.createElement("p");
 
-  // Replace subtext
-  if (noteText) {
-    noteText.innerText = "You're in. We’ll let you know when Chronica opens.";
-   }
- }
-      
-      else {
-        alert("Something went wrong. Please try again.");
-      }
-    } catch (error) {
-      alert("Network error. Please try again.");
-    }
-  });
+                    successMessage.className = "success-message";
+                    successMessage.textContent =
+                        "You're in. We'll let you know when Chronica opens.";
 
-  const featureItems = document.querySelectorAll(".feature-item");
+                    form.parentNode.insertBefore(
+                        successMessage,
+                        form.nextSibling
+                    );
+                } else {
+                    throw new Error("Form submission failed");
+                }
+            } catch (error) {
+                console.error("Waitlist submission error:", error);
 
- const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add("visible");
-        }, index * 120);
-      }
+                alert(
+                    "Something went wrong. Please try again."
+                );
+
+                if (button) {
+                    button.disabled = false;
+                    button.innerHTML = originalButtonText;
+                }
+            }
+        });
     });
-  },
-  {
-    threshold: 0.2,
-  }
- );
 
- featureItems.forEach((item) => {
-  observer.observe(item);
- });
+
+    /* =====================================================
+       FEATURE REVEAL
+    ===================================================== */
+
+    const featureItems =
+        document.querySelectorAll(".feature-item");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add("visible");
+                    }, index * 120);
+                }
+            });
+        },
+        {
+            threshold: 0.2,
+        }
+    );
+
+    featureItems.forEach((item) => {
+        observer.observe(item);
+    });
 });
+
+
+
+

@@ -69,32 +69,37 @@
                 </p>
 
                 <form
-                    class="waitlist-form"
-                    action="https://formspree.io/f/mykowqwp"
-                    method="POST"
-                    id="waitlistForm"
-                >
+                     class="waitlist-form"
+                     name="chronica-waitlist"
+                     method="POST"
+                     action="/"
+                     data-netlify="true"
+                     netlify-honeypot="bot-field"
+                     id="waitlistForm"
+        >
+                <input type="hidden" name="form-name" value="chronica-waitlist">
 
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        aria-label="Email address"
-                        required
-                    >
+                <input
+                     type="hidden"
+                     name="bot-field"
+                     tabindex="-1"
+                     autocomplete="off"
+                  >
 
-                    <input
-                        type="hidden"
-                        name="_subject"
-                        value="New Chronica Waitlist Signup"
-                    >
+                <input
+                     type="email"
+                     name="email"
+                     placeholder="Enter your email"
+                     aria-label="Email address"
+                     autocomplete="email"
+                     required
+                  >
 
-                    <button type="submit">
-                        Join Early Access
-                        <span>→</span>
-                    </button>
-
-                </form>
+                 <button type="submit">
+                    Join Early Access
+              <span>→</span>
+             </button>
+          </form>
 
                 <p class="form-note">
                     Join the first people experiencing Chronica.
@@ -679,31 +684,37 @@
                 </p>
 
                 <form
-                    class="waitlist-form final-form"
-                    action="https://formspree.io/f/mykowqwp"
-                    method="POST"
-                >
+                   class="waitlist-form final-form"
+                   name="chronica-waitlist"
+                   method="POST"
+                   action="/"
+                   data-netlify="true"
+                   netlify-honeypot="bot-field"
+                   >
 
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        aria-label="Email address"
-                        required
-                    >
+                 <input type="hidden" name="form-name" value="chronica-waitlist">
 
-                    <input
-                        type="hidden"
-                        name="_subject"
-                        value="New Chronica Waitlist Signup"
-                    >
+                 <input
+                   type="hidden"
+                   name="bot-field"
+                   tabindex="-1"
+                   autocomplete="off"
+               >
 
-                    <button type="submit">
-                        Join Early Access
-                        <span>→</span>
-                    </button>
+                 <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  aria-label="Email address"
+                  autocomplete="email"
+                  required
+             >
 
-                </form>
+                <button type="submit">
+                  Join Early Access
+                <span>→</span>
+              </button>
+            </form>
 
                 <p class="form-note">
                     Launching soon · Early access is limited.
@@ -785,7 +796,7 @@
 
     </footer>
 
-    <script src="script.js"></script>
+     <script src="script.js"></script>
 
 </body>
 </html>
