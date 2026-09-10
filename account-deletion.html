@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Account Deletion — Chronica</title>
+  <meta
+    name="description"
+    content="Request deletion of your Chronica account and associated personal data."
+  >
+
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --text: #111318;
+      --muted: #666b73;
+      --line: #e4e6ea;
+      --card: #ffffff;
+      --accent: #111318;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(100% - 40px, 860px);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .brand span {
+      display: inline-block;
+      margin-right: 7px;
+      font-size: 16px;
+    }
+
+    .back {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .back:hover {
+      color: var(--text);
+    }
+
+    main {
+      padding: 90px 0 100px;
+    }
+
+    .eyebrow {
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 700px;
+      margin-bottom: 24px;
+      font-size: clamp(42px, 7vw, 68px);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+      font-weight: 600;
+    }
+
+    .intro {
+      max-width: 680px;
+      margin-bottom: 60px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.7;
+    }
+
+    section {
+      margin-top: 52px;
+    }
+
+    h2 {
+      margin-bottom: 18px;
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      font-weight: 600;
+    }
+
+    p {
+      max-width: 720px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    ol {
+      max-width: 720px;
+      padding-left: 24px;
+      color: var(--muted);
+    }
+
+    li {
+      margin-bottom: 14px;
+      padding-left: 6px;
+    }
+
+    .card {
+      margin-top: 28px;
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--card);
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      margin-top: 8px;
+      padding: 0 24px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: opacity 0.2s ease;
+    }
+
+    .button:hover {
+      opacity: 0.82;
+    }
+
+    .email {
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .warning {
+      border-left: 3px solid var(--text);
+      padding-left: 20px;
+    }
+
+    .warning p {
+      color: var(--text);
+    }
+
+    footer {
+      padding: 36px 0 45px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-brand {
+      font-weight: 600;
+      margin-bottom: 7px;
+    }
+
+    .footer-description,
+    .copyright {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 28px, 860px);
+      }
+
+      header {
+        padding: 22px 0;
+      }
+
+      main {
+        padding: 60px 0 75px;
+      }
+
+      h1 {
+        font-size: 46px;
+      }
+
+      .intro {
+        font-size: 17px;
+        margin-bottom: 45px;
+      }
+
+      .card {
+        padding: 24px;
+        border-radius: 15px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="/" class="brand">
+        <span>✦</span> Chronica
+      </a>
+
+      <a href="/" class="back">Back to Chronica</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="eyebrow">Chronica LifeOS</div>
+
+      <h1>Account deletion.</h1>
+
+      <p class="intro">
+        You can permanently delete your Chronica account and associated
+        personal data at any time.
+      </p>
+
+      <section>
+        <h2>Delete your account in the app</h2>
+
+        <p>
+          The fastest way to delete your account is directly inside the
+          Chronica app.
+        </p>
+
+        <ol>
+          <li>Open Chronica and go to <strong>Profile</strong>.</li>
+          <li>Open <strong>Settings</strong>.</li>
+          <li>Select <strong>Delete Account</strong>.</li>
+          <li>Review the deletion warning and confirm.</li>
+          <li>Enter your current password when requested.</li>
+        </ol>
+      </section>
+
+      <section class="warning">
+        <h2>Important</h2>
+
+        <p>
+          Account deletion is permanent and cannot be undone. Once your
+          account is deleted, you will not be able to recover your Chronica
+          account or its associated data.
+        </p>
+
+        <p>
+          Deletion includes your account and associated personal data,
+          including documented life data and account records, subject to
+          any information we are legally required to retain.
+        </p>
+      </section>
+
+      <section>
+        <h2>Request deletion from the web</h2>
+
+        <p>
+          If you cannot access the Chronica app, you can request deletion
+          by contacting us using the email address associated with your
+          Chronica account.
+        </p>
+
+        <div class="card">
+          <p>
+            Send an email to
+            <a
+              class="email"
+              href="mailto:privacy@chronica.so?subject=Chronica%20Account%20Deletion%20Request"
+            >
+              privacy@chronica.so
+            </a>
+            with the subject:
+            <strong>Chronica Account Deletion Request</strong>
+          </p>
+
+          <p>
+            Please send the request from the email address associated with
+            your Chronica account so that we can verify the request.
+          </p>
+
+          <p>
+            <strong>Never send your Chronica password by email.</strong>
+          </p>
+
+          <a
+            class="button"
+            href="mailto:privacy@chronica.so?subject=Chronica%20Account%20Deletion%20Request"
+          >
+            Request account deletion
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <h2>Need help?</h2>
+
+        <p>
+          For questions about account deletion or your personal data,
+          contact
+          <a class="email" href="mailto:privacy@chronica.so">
+            privacy@chronica.so
+          </a>.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+
+      <div>
+        <div class="footer-brand">Chronica</div>
+        <div class="footer-description">
+          A Life Operating System
+        </div>
+        <div class="copyright">
+          © 2026 Chronica LifeOS
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="mailto:hello@chronica.so">Contact</a>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
