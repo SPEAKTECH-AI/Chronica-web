@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Chronica Support — Help & Contact</title>
+
+  <meta
+    name="description"
+    content="Get help with Chronica, your Life Operating System. Find support for your account, app functionality, subscriptions, privacy, and account deletion."
+  >
+
+  <meta name="theme-color" content="#0b0d10">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --surface: #111419;
+      --surface-hover: #15191f;
+      --text: #f5f5f2;
+      --muted: #a7a9ad;
+      --border: rgba(255, 255, 255, 0.09);
+      --accent: #ffffff;
+      --max-width: 900px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .back-link {
+      color: var(--muted);
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 110px 0 80px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(48px, 8vw, 78px);
+      line-height: 1.05;
+      font-weight: 500;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    /* SUPPORT GRID */
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      padding-bottom: 100px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px;
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .card:hover {
+      background: var(--surface-hover);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .card h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+
+    .card a {
+      display: inline-block;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+      padding-bottom: 2px;
+      transition: border-color 0.2s ease;
+    }
+
+    .card a:hover {
+      border-color: var(--text);
+    }
+
+    /* ACCOUNT DELETION */
+
+    .deletion {
+      padding: 0 0 100px;
+    }
+
+    .deletion-inner {
+      border-top: 1px solid var(--border);
+      padding-top: 70px;
+      text-align: center;
+    }
+
+    .deletion-inner h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 34px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .deletion-inner p {
+      max-width: 650px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text);
+      font-size: 14px;
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--surface);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .footer-brand {
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+    }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 13px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 28px, var(--max-width));
+      }
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .hero {
+        padding: 80px 0 60px;
+      }
+
+      h1 {
+        letter-spacing: -1.5px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .support-grid {
+        grid-template-columns: 1fr;
+        padding-bottom: 70px;
+      }
+
+      .card {
+        padding: 26px;
+      }
+
+      .deletion {
+        padding-bottom: 70px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="/" class="logo">Chronica</a>
+
+      <a href="/" class="back-link">
+        ← Back to Chronica
+      </a>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div class="container">
+
+        <div class="eyebrow">
+          Chronica Support
+        </div>
+
+        <h1>
+          How can we help?
+        </h1>
+
+        <p>
+          Need help with Chronica? Find support for your account,
+          app functionality, subscriptions, privacy, and account deletion.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- SUPPORT OPTIONS -->
+
+    <section>
+      <div class="container support-grid">
+
+        <div class="card">
+          <h2>Account & App Support</h2>
+
+          <p>
+            Having trouble with your account, login, or something
+            inside the Chronica app? Contact us and we'll help.
+          </p>
+
+          <a href="mailto:support@chronica.so">
+            support@chronica.so
+          </a>
+        </div>
+
+
+        <div class="card">
+          <h2>Privacy & Data</h2>
+
+          <p>
+            For privacy questions, data requests, or questions
+            about how Chronica handles your information.
+          </p>
+
+          <a href="mailto:privacy@chronica.so">
+            privacy@chronica.so
+          </a>
+        </div>
+
+
+        <div class="card">
+          <h2>Subscriptions & Billing</h2>
+
+          <p>
+            Chronica subscriptions are purchased and managed
+            through the Apple App Store or Google Play.
+          </p>
+
+          <a href="mailto:support@chronica.so">
+            Contact support
+          </a>
+        </div>
+
+
+        <div class="card">
+          <h2>General Questions</h2>
+
+          <p>
+            Have a question about Chronica, its features,
+            or how the Life Operating System works?
+          </p>
+
+          <a href="mailto:support@chronica.so">
+            Contact us
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ACCOUNT DELETION -->
+
+    <section class="deletion">
+      <div class="container deletion-inner">
+
+        <h2>
+          Delete your account
+        </h2>
+
+        <p>
+          You can permanently delete your Chronica account
+          and associated personal data through the account
+          deletion process.
+        </p>
+
+        <a
+          href="account-deletion.html"
+          class="button"
+        >
+          View Account Deletion Instructions
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container footer-content">
+
+      <div>
+        <div class="footer-brand">Chronica</div>
+
+        <div class="footer-copy">
+          A Life Operating System
+        </div>
+      </div>
+
+      <nav class="footer-links">
+        <a href="/">Home</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="mailto:support@chronica.so">Contact</a>
+      </nav>
+
+    </div>
+  </footer>
+
+</body>
+</html>
